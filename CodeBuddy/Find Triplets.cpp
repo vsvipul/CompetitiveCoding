@@ -3,6 +3,7 @@ using namespace std;
 
 int main()
 {
+    ios_base::sync_with_stdio(false);
     int x,y,z,i,temp;
     long long int res=0;
     vector <int> p,q,r;
@@ -33,6 +34,6 @@ int main()
     	vector <int>:: iterator it2=lower_bound(r.begin(),r.end(),q[i]);
     	res+=(it1-p.begin())*(r.end()-it2);
     }
-    cout<<res<<endl;
+    cout<<res<<'\n';
     return 0;
 }
