@@ -1,11 +1,12 @@
 #include <bits/stdc++.h>
+#define LL long long int
 using namespace std;
 
-long long int sop(vector <long long int> v)
+LL sop(vector <LL> v)
 {
-    long long int i,j;
-    long long int ans=0;
-    vector <long long int> v1=v;
+    LL i,j;
+    LL ans=0;
+    vector <LL> v1=v;
     for (i=1;i<v1.size();i++)
     {
         v1[i]+=v1[i-1];
@@ -19,23 +20,25 @@ long long int sop(vector <long long int> v)
 
 int main()
 {
-    map <long long int,vector <long long int> > m;
-    long long int n,i;
-    long long int temp;
+    ios_base::sync_with_stdio(false);
+    map <LL,vector <LL> > m;
+    map <LL, vector <LL> >::iterator it;
+    map <LL, LL > m1;
+    int n,i;
+    LL temp;
     cin>>n;
     for (i=1;i<=n;i++)
     {
         cin>>temp;
         m[temp].push_back(i);
     }
-    map <long long int, long long int > m1;
-    map <long long int, vector <long long int> >::iterator it;
+    
     for (it=m.begin();it!=m.end();it++)
     {
-    	m1[it->first]=sop(m[it->first]);
+        m1[it->first]=sop(it->second);
     }
-    long long int q;
-    long long int x;
+    LL q;
+    LL x;
     cin>>q;
     while (q--)
     {
