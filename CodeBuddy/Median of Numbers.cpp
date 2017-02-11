@@ -6,17 +6,17 @@ int main()
     multiset <long long int> m;
     multiset <long long int>::iterator it,it2;
     int n,i;
-    cin>>n;
+    scanf("%d",&n);
     long long int temp;
     double res;
-    cin>>temp;
+    scanf("%lld",&temp);
     m.insert(temp);
     it=m.begin();
     res=temp;
-    cout<<fixed<<setprecision(1)<<res<<'\n';
+    printf("%0.1f\n",res);
     for (i=1;i<n;i++)
     {
-        cin>>temp;
+        scanf("%lld",&temp);
         m.insert(temp);
         if (i%2==0)
         {
@@ -38,7 +38,7 @@ int main()
             it2++;
             res=(double) (*it+*it2)/2.0;
         }
-        cout<<fixed<<setprecision(1)<<res<<'\n';
+        printf("%0.1f\n",res);
     }
     return 0;
 }
