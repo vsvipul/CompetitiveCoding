@@ -1,34 +1,34 @@
 #include <bits/stdc++.h>
+#define ll long long int
 using namespace std;
 int main()
 {
-    int t;
+	ios_base::sync_with_stdio(false);
+    ll l,r,k,temp;
+    int t,flag;
     cin>>t;
     while (t--)
     {
-    	long long int l,r,k;
+    	temp=1;
+    	flag=0;
     	cin>>l>>r>>k;
-    	long long int arr[64];
-    	int i,j,flag=0;
-    	for (i=0;i<64;i++)
-    	{
-    		long long int temp=1;
-    		for (j=0;j<i;j++)
-    		{
-    			temp*=k;
-    		}
-    		arr[i]=temp;
-    		if ((arr[i]>=l)&&(arr[i]<=r))
+    	if ((1>=l)&&(1<=r))
     		{
     			flag=1;
-    			cout<<arr[i]<<" ";
+    			cout<<1<<" ";
     		}
-    		if (r/temp<k)
-    			break;
+    	while (r/temp>=k)
+    	{
+    		temp*=k;
+    		if ((temp>=l)&&(temp<=r))
+    		{
+    			flag=1;
+    			cout<<temp<<" ";
+    		}
     	}
     	if (flag==0)
     		cout<<"-1";
-    	cout<<endl;
+    	cout<<'\n';
     }
     return 0;
 }
