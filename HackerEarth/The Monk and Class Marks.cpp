@@ -17,7 +17,7 @@ bool comp(stud a, stud b){
 
 int main()
 {
-	ios_base::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     int n,i;
     cin>>n;
     stud arr[n];
