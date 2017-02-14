@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-	ios_base::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     int t,n,m,i;
     long int temp;
     cin>>t;
