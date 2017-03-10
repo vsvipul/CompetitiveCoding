@@ -5,7 +5,7 @@ int main()
 {
 	set <int> s;
 	set <int>:: iterator it;
-  int n,sum,step=0,flag=0;
+  	int n,sum,step=0,flag=0;
 	cin>>n;
 	while (sum!=1)
 	{
