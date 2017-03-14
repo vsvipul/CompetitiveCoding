@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t,n,i,flag,res,countdd,countndd;
+	cin>>t;
+	while (t--)
+	{
+		flag=0;countdd=0;countndd=0;
+		cin>>n;
+		int arr[n];
+		for (i=0;i<n;i++)
+			cin>>arr[i];
+		sort(arr,arr+n);
+		if (arr[n-1]>=n)
+			flag=0;
+		else if (arr[n-1]==n-1 && arr[0]==n-1)
+		{
+			res=n;
+			flag=1;
+		}
+		else
+		{
+			res=arr[n-1];
+			countdd=res;
+			countndd=n-res;
+			for (i=0;i<n;i++)
+			{
+				if (arr[i]==res)
+					countndd--;
+				else if (arr[i]==res-1)
+					countdd--;
+			}
+			if (countndd==countdd && countdd==0)
+				flag=1;
+			else
+				flag=0;
+		}
+		if (flag==0)
+			cout<<"-1\n";
+		else
+			cout<<res<<"\n";
+	}
+	return 0;
+}
