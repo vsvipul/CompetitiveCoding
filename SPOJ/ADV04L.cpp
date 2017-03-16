@@ -7,7 +7,7 @@ int main()
     vector <ll> v;
     vector <ll>::iterator it;
     int i,t;
-	v.push_back(1);
+    v.push_back(1);
     v.push_back(1);
     for (i=2;i<90;i++)
     {
