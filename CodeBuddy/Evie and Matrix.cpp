@@ -11,9 +11,7 @@ int main()
     for (i=3;i<100001;i+=2)
     {
         sum=0;
-        cur+=step;
-        sum+=cur;
-        int x=3;
+        int x=4;
         while (x--)
         {
             cur+=step;
