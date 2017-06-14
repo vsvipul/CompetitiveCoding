@@ -19,14 +19,14 @@ int path(int x, int y)
 
 int main()
 {
-  ios_base::sync_with_stdio(false);
-  int t,n,m;
-  scanf("%d",&t);
+	ios_base::sync_with_stdio(false);
+	int t,n,m;
+	scanf("%d",&t);
+	memset(dp,-1,sizeof(dp));
 	while (t--)
 	{
-		memset(dp,-1,sizeof(dp));
 		scanf("%d%d",&n,&m);
 		printf("%d\n",path(n-1,m-1));
 	}
-  return 0;
+	return 0;
 }
