@@ -10,7 +10,7 @@ int main()
     {
         j=0;
         cin>>a>>b;
-        for (i=0;i<a.length();i++)
+        for (i=0; i<a.length(); i++)
         {
             if (a[i]==b[j])
                 j++;
