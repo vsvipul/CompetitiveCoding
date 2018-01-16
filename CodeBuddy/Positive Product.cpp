@@ -1,36 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
-    int i,n;
-    cin>>n;
-    int arr[n];
-    for (i=0;i<n;i++)
-        cin>>arr[i];
-    int count=0,max=0;
-    bool pos=true;
-    for (i=0;i<n;i++)
-    {
-
-        if (arr[i]>0)
-        {
-            count++;
-        }
-        else if (arr[i]<0)
-        {
-            count++;
-            pos=!pos;
-        }
-        else if (arr[i]==0)
-        {
-            count=0;
-            pos=true;
-        }
-        if ((count>max)&&(pos==true))
-                max=count;
-        else if ((count>max)&&(pos==false))
-                max=count-1;
-    }
-    cout<<max;
-    return 0;
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	int i,n;
+	cin>>n;
+	int a[n];
+	int max=0,cnt=0;
+	bool neg=false;
+	for (i=0;i<n;i++)
+		cin>>a[i];
+	for (i=0;i<n;i++)
+	{
+		if (a[i]==0)
+		{
+			cnt=0;
+			neg=false;
+		}
+		else
+		{
+			if (a[i]<0)
+				neg=!neg;
+			cnt++;
+			if (cnt>max && !neg)
+				max=cnt;
+		}
+	}
+	cnt=0,neg=false;
+	for (i=n-1;i>=0;i--)
+	{
+		if (a[i]==0)
+		{
+			cnt=0;
+			neg=false;
+		}
+		else
+		{
+			if (a[i]<0)
+				neg=!neg;
+			cnt++;
+			if (cnt>max && !neg)
+				max=cnt;
+		}
+	}	
+	cout<<max<<"\n";
+	return 0;
 }
