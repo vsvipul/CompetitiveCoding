@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 
 #define vi vector <int>
-#define mii map <int, int>
+#define mii map <int,int>
 #define pb push_back
 #define mp make_pair
 #define ll long long
 #define vll vector <ll>
 #define vi vector <int>
-#define pii pair<int,int>
+#define ii pair<int,int>
 #define all(a) (a).begin(),(a).end()
 #define FI cin.tie(NULL);ios_base::sync_with_stdio(false)
 #define T int t; cin>>t; while(t--)
@@ -23,6 +23,31 @@ using namespace std;
 
 int main()
 {
-	FI;
-	return 0;
+	T
+	{
+		int a,i;
+		char str[10000];
+		scanf(" %[^\n]", str);
+		vi v;
+		a=0;
+		for (i=0;i<strlen(str);i++)
+		{
+			if (str[i]>='0' && str[i]<='9')
+			{
+				a=(a*10)+(str[i]-'0');
+			}
+			else
+			{
+				if (a>0)
+					v.pb(a);
+				a=0;
+			}
+		}
+		int num=v[0]*v[3],dem=v[1]*v[2];
+		int div=__gcd(num,dem);
+		num/=div;
+		dem/=div;
+		cout<<num<<" "<<dem<<"\n";
+	}
+    return 0;
 }
